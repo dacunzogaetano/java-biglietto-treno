@@ -1,6 +1,7 @@
 package jana60;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class CalcolaBiglietto {
 
@@ -11,6 +12,7 @@ public class CalcolaBiglietto {
 		
 		
 		Scanner scan = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
 		
 		System.out.println("Inserisci la tua età");
 		etaPersona = scan.nextFloat();
@@ -32,13 +34,13 @@ public class CalcolaBiglietto {
 		} else if (kmViaggio <= 0) {
 			System.out.println("Non fare il furbo");
 		} else if (etaPersona < 19 ) {
-			System.out.println("Il prezzo del biglietto è: " + prezzoViaggioMinorenni + "€,"	
-					+ " hai un sconto di " + scontoMinorenni + "€.");			
+			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioMinorenni) + "€,"	
+					+ " hai un sconto di " + df.format(prezzoViaggioPensionati) + "€.");			
 		} else if (etaPersona > 65) {
-			System.out.println("Il prezzo del biglietto è: " + prezzoViaggioPensionati + "€,"
-					+ " hai uno sconto di " + scontoPensionati + "€.");
+			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioPensionati) + "€,"
+					+ " hai uno sconto di " + df.format(scontoPensionati) + "€.");
 		} else {
-			System.out.println("Il prezzo del biglietto è: " + prezzoViaggioNormale + "€.");
+			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioPensionati) + "€.");
 		}
 		scan.close();
 	}
