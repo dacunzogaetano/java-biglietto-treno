@@ -35,12 +35,12 @@ public class CalcolaBiglietto {
 			System.out.println("Non fare il furbo");
 		} else if (etaPersona < 19 ) {
 			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioMinorenni) + "€,"	
-					+ " hai un sconto di " + df.format(prezzoViaggioPensionati) + "€.");			
+					+ " hai ricevuto uno sconto di " + df.format(scontoMinorenni) + "€.");			
 		} else if (etaPersona > 65) {
 			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioPensionati) + "€,"
-					+ " hai uno sconto di " + df.format(scontoPensionati) + "€.");
+					+ " hai ricevuto uno sconto di " + df.format(scontoPensionati) + "€.");
 		} else {
-			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioPensionati) + "€.");
+			System.out.println("Il prezzo del biglietto è: " + df.format(prezzoViaggioNormale) + "€.");
 		}
 		scan.close();
 	}
